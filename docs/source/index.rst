@@ -1,10 +1,8 @@
-Welcome to Lumache's documentation!
+Welcome to 42Seoul-region openstack documentation
 ===================================
 
-**Lumache** (/lu'make/) is a Python library for cooks and food lovers
-that creates recipes mixing random ingredients.
-It pulls data from the `Open Food Facts database <https://world.openfoodfacts.org/>`_
-and offers a *simple* and *intuitive* API.
+**Openstack** is a `Open Source Cloud Computing Infrastructure <https://www.openstack.org>`_
+that a set of software components that provide common services for *cloud infrastructure*.
 Lumache has its documentation hosted on Read the Docs.
 
 Check out the :doc:`usage` section for further information, including
@@ -20,4 +18,5 @@ Contents
 .. toctree::
 
    usage
+   nova
    api
