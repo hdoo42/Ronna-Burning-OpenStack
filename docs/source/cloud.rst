@@ -2,17 +2,16 @@ Cloud
 =====
 
 Essential Characteristics:
+---------------------------
 
 **On-demand self-service**
     A consumer can unilaterally provision computing capabilities, such as
     server time and network storage, as needed automatically without requiring human
     interaction with each service provider.
 
-주문형 셀프 서비스
--------------
+**주문형 셀프 서비스**
     소비자는 각 서비스 공급자와 사람이 상호 작용할 필요 없이 필요에 따라 자동으로 서버 시간이나 네트워크 스토리지와 같은 컴퓨팅 기능을 일방적으로 프로비저닝할 수 있습니다.
     따라서 사용자는 간단한 인터페이스만으로도 클라우드의 자원에 접근하고 사용할 수 있습니다.
-
 
 **Broad network access**
     Capabilities are available over the network and accessed through standard
@@ -20,9 +19,8 @@ Essential Characteristics:
     mobile phones, tablets, laptops, and workstations).
     
 광범위 네트워크 엑세스
--------------
+-----------------
     네트워크를 바탕으로 서비스 기능이 제공되며, 여러 플랫폼에 적용되는 표준 메커니즘을 통해 컴퓨팅 자원에 접근할 수 있습니다.
-
 
 **Resource pooling**
     The provider’s computing resources are pooled to serve multiple consumers

@@ -10,7 +10,7 @@ Contents
 
 .. toctree::
 
-   42seoul-region
+   42seoul_region
    openstack
    cloud
    hypervisor
