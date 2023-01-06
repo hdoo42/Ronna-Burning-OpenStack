@@ -1,9 +1,8 @@
-Welcome to 42Seoul-region openstack documentation
+===================================
+42서울 리전 오픈스택 문서 
 ===================================
 
-**Openstack** is a `Open Source Cloud Computing Infrastructure <https://www.openstack.org>`_ that a set of software components that provide common services for **cloud infrastructure**.
-
-Check out the :doc:`openstack` section for further information.
+이 페이지는 42서울 리전의 공식 문서입니다.
 
 Contents
 --------
