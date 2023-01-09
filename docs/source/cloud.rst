@@ -4,11 +4,11 @@ Cloud
 
 .. code-block::
 
-	IaaS (Infrastructure-as-a-Service)
+	IaaS (Infrastructure\-as\-a-Service)
 	클라우드 인프라 서비스
 	인터넷을 통해 최종 사용자에게 IT 인프라를 제공하는 형태의 클라우드 컴퓨팅
 	가상화, 스토리지, 네트워크, 서버를 제공
-	서비스형(as-a-Service)이라는 용어는 고객을 대신하여 클라우드 컴퓨팅 서비스를 관리한다는 의미
+	서비스형(as\-a\-Service)이라는 용어는 고객을 대신하여 클라우드 컴퓨팅 서비스를 관리한다는 의미
 
 필수 구성 요소
 ===========
@@ -20,7 +20,7 @@ Cloud
 
 	.. code-block::
 
-	Q. 프로비저닝이 뭔가요?
+		Q. 프로비저닝이 뭔가요?
 		- 프로비저닝(provisioning)은 사용자의 요구에 맞게 시스템 자원을 할당, 배치, 배포해 두었다가 필요 시 시스템을 즉시 사용할 수 있는 상태로 미리 준비해 두는 것을 말한다.
 
 광범위 네트워크 엑세스(Broad network access)
