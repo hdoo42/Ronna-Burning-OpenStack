@@ -41,6 +41,7 @@ VM의 종류
 	- 자바의 JVM이 이에 해당합니다
 
 
-출처:
-	- `Wikipedia - 가상 머신 <https://ko.wikipedia.org/wiki/%EA%B0%80%EC%83%81_%EB%A8%B8%EC%8B%A0>`_
-	- `Red Hat - 가상 머신 <https://www.redhat.com/ko/topics/virtualization/what-is-a-virtual-machine>`_
+참고자료
+--------
+- `Wikipedia - 가상 머신 <https://ko.wikipedia.org/wiki/%EA%B0%80%EC%83%81_%EB%A8%B8%EC%8B%A0>`_
+- `Red Hat - 가상 머신 <https://www.redhat.com/ko/topics/virtualization/what-is-a-virtual-machine>`_

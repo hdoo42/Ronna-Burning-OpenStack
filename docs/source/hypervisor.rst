@@ -30,6 +30,7 @@ Hypervisor의 분류
 	- VMware, VirtualBox 등 대부분의 가상화 소프트웨어
 
 
-출처:
-	- `Wikipedia - Hypervisor <https://en.wikipedia.org/wiki/Hypervisor>`_
-	- `Red Hat - Hypervisor <https://www.redhat.com/ko/topics/virtualization/what-is-a-hypervisor>`_
+출처
+----
+- `Wikipedia - Hypervisor <https://en.wikipedia.org/wiki/Hypervisor>`_
+- `Red Hat - Hypervisor <https://www.redhat.com/ko/topics/virtualization/what-is-a-hypervisor>`_

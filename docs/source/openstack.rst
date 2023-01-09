@@ -26,16 +26,16 @@ OpenStack을 사용하는 기업
 
 최소 구성 요소
 ----------
-
  - Keystone: Identify
 	- 모든 컴포넌트의 인증을 담당하며, 사용자의 권한을 관리한다.
 	- LDAP 등을 사용하여 사용자의 중앙 디렉토리 기능을 담당한다.
-	Q. LDAP는 뭔가요?
-	- Lightweight Directory Access Protocol의 약자이다.
+	- Q. LDAP는 뭔가요?
+		- Lightweight Directory Access Protocol의 약자이다.
 
  - Glance: Image
 	- 인스턴스를 생성하기 위한 운영체제 디스크 이미지를 제공한다.
-	Q. 인스턴스란 뭔가요?
+	- Q. 인스턴스란 뭔가요?
+		- 원격으로 접근 할 수 있는 클라우드 위의 서버 자원이다. 반대되는 개념으로 물리적으로 직접 구축하는 온프레미스 서버가 있다.
 
  - Placement
 	- 프로젝트에서 사용하는 리소스를 추적한다.
@@ -51,14 +51,16 @@ OpenStack을 사용하는 기업
  - Cinder: Block Storage
 	- 블록 스토리지 장치를 생성하고 관리할 수 있도록 백엔드를 플러그-인 할 수 있다.
 	- 지원하는 백엔드로 LVM, Redhat Ceph, Redhat GlusterFS, EMC, NetApp, IBM Store Virtual, Nexnta 등이 있다.
-	Q. Block Storage가 뭔가요?
-		TODO: 
+	- Q. Block Storage가 뭔가요?
+		// TODO: 
 
  - Horizon: Dashboard
 	- OpenStack 환경을 운영 및 관리할 수 있는 웹 기반의 셀프 서비스 포털 인터페이스를 제공한다.
 	- python기반의 Django 프레임워크로 작성되었다. OpenStack API와 Amazon Web Server API를 지원한다.
-	Q. Dashboard가 뭔가요?
-	Q. 셀프 서비스 포털이란 뭔가요?
+	- Q. Dashboard가 뭔가요?
+		// TODO: 
+	- Q. 셀프 서비스 포털이란 뭔가요?
+		// TODO: 
 	
 
 그 외 구성요소
@@ -105,3 +107,7 @@ OpenStack을 사용하는 기업
 
  - Aodh: Rule-based alarm actions 
 	- 이 알람 서비스를 사용하면 Ceilometer 또는 Gnocchi에서 수집한 분석 및 이벤트 데이터에 대해 정의된 규칙을 기반으로 작업을 트리거할 수 있다.
+
+참고자료
+--------
+- `클라우드 컴퓨팅에서 인스턴스란 - https://aws.amazon.com/ko/what-is/cloud-instances/`_
