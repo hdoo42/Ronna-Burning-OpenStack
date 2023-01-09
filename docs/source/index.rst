@@ -12,5 +12,5 @@ Contents
    42seoul_region
    openstack
    cloud
-   hypervisor
    virtual_machine
+   hypervisor
