@@ -26,48 +26,71 @@ OpenStack을 사용하는 기업
 
 최소 구성 요소
 ----------
- - Keystone: Identify
+Keystone: Identify
 	- 모든 컴포넌트의 인증을 담당하며, 사용자의 권한을 관리한다.
 	- LDAP 등을 사용하여 사용자의 중앙 디렉토리 기능을 담당한다.
-	- Q. LDAP는 뭔가요?
+
+	.. code-block::
+
+	Q. LDAP는 뭔가요?
 		- Lightweight Directory Access Protocol의 약자이다.
+		- 이름 기반으로 객체를 조회하고 변경할 수 있게 하는 통신규약이다.
+		- 이름과 비밀번호로 인증하고 권한과 같은 값을 조회할 수 있어서 사용자 로그인에 사용된다.
+		- 일종의 SQL이 곁들여진 Object Storage라고 볼 수도 있다.
+		- LDAP는 트리 구조로 데이터를 저장하는 계층형 데이터베이스.
+		- 데이터가 위치한 계층에 접근하면 필요한 데이터를 바로 꺼내올 수 있기에, 데이터를 신속하게 조회하는 읽기 작업에 적합하다.
 
- - Glance: Image
+Glance: Image
 	- 인스턴스를 생성하기 위한 운영체제 디스크 이미지를 제공한다.
-	- Q. 인스턴스란 뭔가요?
-		- 원격으로 접근 할 수 있는 클라우드 위의 서버 자원이다. 반대되는 개념으로 물리적으로 직접 구축하는 온프레미스 서버가 있다.
 
- - Placement
+	.. code-block::
+
+    Q. 인스턴스란 뭔가요?
+		- 물리적으로 직접 구축하는 온프레미스 서버와 반대되는 개념이다.
+		- 원격으로 접근 할 수 있는 클라우드 위의 서버 자원이다.
+
+Placement
 	- 프로젝트에서 사용하는 리소스를 추적한다.
 
- - Nova: Compute
+Nova: Compute
 	- 인스턴스를 생성-중지하는 라이프사이클을 관리합니다.
 	- 인스턴스의 컴퓨팅 스케줄링을 담당합니다.
 
- - Neutron: Network
+Neutron: Network
 	- 인스턴스에 외부 및 내부 서비스간 네트워크를 제공한다.
 	- DHCP, VLAN, floating IP 등의 기능도 제공한다.
 
- - Cinder: Block Storage
+Cinder: Block Storage
 	- 블록 스토리지 장치를 생성하고 관리할 수 있도록 백엔드를 플러그-인 할 수 있다.
 	- 지원하는 백엔드로 LVM, Redhat Ceph, Redhat GlusterFS, EMC, NetApp, IBM Store Virtual, Nexnta 등이 있다.
-	- Q. Block Storage가 뭔가요?
-		// TODO: 
 
- - Horizon: Dashboard
+	.. code-block::
+
+	Q. Block Storage가 뭔가요?
+		- 데이터를 일정한 크기의 연속된 블록으로 나누어 저장하는 방식이다.
+		- 각 데이터 블록은 고유 식별자인 주소를 부여받으며, 해당 식별자를 통해 효율적으로 검색할 수 있고 빠르게 데이터로 재구성 할 수 있다.
+		- 하드디스크 또한 Block Storage의 추상적 개념에 속한다. 따라서 Block Storage 서비스를 사용하여 가상 하드디스크를 생성한다고 생각할 수 있다.
+
+Horizon: Dashboard
 	- OpenStack 환경을 운영 및 관리할 수 있는 웹 기반의 셀프 서비스 포털 인터페이스를 제공한다.
-	- python기반의 Django 프레임워크로 작성되었다. OpenStack API와 Amazon Web Server API를 지원한다.
-	- Q. Dashboard가 뭔가요?
-		// TODO: 
-	- Q. 셀프 서비스 포털이란 뭔가요?
-		// TODO: 
-	
+	- Python 기반의 Django 프레임워크로 작성되었다. OpenStack API와 Amazon Web Server API를 지원한다.
+  
+	.. code-block::
 
+	Q. Dashboard가 뭔가요?
+		- 여러 가지 지표를 그래픽 인터페이스로 나타내어 보여주는 페이지다.
+	Q. 셀프 서비스 포털이란 뭔가요?
+		- 사용자가 능동적으로 서비스를 제어할 수 있도록 하는 페이지다.
+		- 근본적으로 식당에서의 반찬 '셀프 서비스'랑 똑같다.
+		- 직원을 거치지 않고 사용자가 직접 원하는 서비스를 이용할 수 있다. 
+	
 그 외 구성요소
 -----------
 
  - Swift: Object Storage
 	- 클라우드 스토리지 소프트웨어를 제공, 간단한 API로 많은 데이터를 저장하고 검색할 수 있다.
+
+//FIXME: 아래는 모름
 
  - Mistral: Workflow
 	- 워크플로우를 관리하는 서비스. YAML 기반의 워크플로우 언어를 사용해서 작성하고 워크플로우 정의를 RESTAPI를 통해 업로드한다. 사용자는 동일한 API로 워크플로우를 시작하거나 자동화한다.
@@ -111,3 +134,5 @@ OpenStack을 사용하는 기업
 참고자료
 --------
 - `클라우드 컴퓨팅에서 인스턴스란 - https://aws.amazon.com/ko/what-is/cloud-instances/`_
+- `알아두면 쓸데있는 LDAP - https://www.samsungsds.com/kr/insights/ldap.html`_
+- `파일, 블록, 오브젝트 스토리지 - https://www.redhat.com/ko/topics/data-storage/file-block-object-storage`_

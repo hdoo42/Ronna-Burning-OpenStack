@@ -2,7 +2,8 @@
 Cloud
 =====
 
-.. code-block:: none
+.. code-block::
+
 	IaaS (Infrastructure-as-a-Service)
 	클라우드 인프라 서비스
 	인터넷을 통해 최종 사용자에게 IT 인프라를 제공하는 형태의 클라우드 컴퓨팅
