@@ -56,10 +56,14 @@ RPC
 응답 코드
 -------------
 100번대 - informational response
+
 200번대 - success
+
 300번대 - redirection 
     리다이렉션은 주로 대체할 URL을 제시한다. 서버에서 정적인 파일 소개가 아니라 정의된 동작(script 등)을 통해 응답하는 경우가 많다.
+
 400번대 - client errors
+
 500번대 - server errors
 
 참고자료
