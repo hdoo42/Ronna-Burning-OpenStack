@@ -14,3 +14,4 @@ Contents
    cloud
    virtual_machine
    hypervisor
+   http
