@@ -14,9 +14,10 @@ Hypervisor
 
 하이퍼바이저는 하드웨어에 직접 설치해서 실행되는 Native(Bare-metal) 방식과, 애플리케이션으로 설치하는 Hosted 방식으로 분류된다.
 
-	.. image:: images/Hypervisor.png
-		:width: 600
-		:alt: Hypervisor Type
+.. image:: images/Hypervisor.png
+	:width: 600
+	:aligh: center
+	:alt: Hypervisor Type
 
 - Native(Bare-metal)
 	- 호스트 머신의 하드웨어 위에 하이퍼바이저가 직접 설치되어 실행되고, 설치된 하이퍼바이저 위에서 운영체제가 실행된다.

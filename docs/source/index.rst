@@ -15,3 +15,4 @@ Contents
    virtual_machine
    hypervisor
    http
+   rabbitmq
