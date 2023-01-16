@@ -15,4 +15,4 @@ Contents
    virtual_machine
    hypervisor
    http
-   message_queue
+   rabbitmq
