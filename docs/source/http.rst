@@ -18,7 +18,7 @@ W3(World wide web) 상에서 정보를 주고받기 위한 통신 규약(Protoco
 주로 쓰는 타입에는 html, json 등이 있다. 
 콘텐츠에 두 줄 이상 개행이 들어가면 끝이라는 뜻이다.
 
-.. code-block:: mermaid
+.. mermaid::
 
     ---
     title: Request / Response Message
