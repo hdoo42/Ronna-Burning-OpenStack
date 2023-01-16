@@ -33,7 +33,7 @@ Cloud
 
 	Q. 테넌트(tenant)가 뭔가요?
 
-		    // TODO: 잘 모르겠음...
+		    .. TODO: 잘 모르겠음...
 
 	Q. 멀티-테넌트(multi-tenant)가 뭔가요?
 
