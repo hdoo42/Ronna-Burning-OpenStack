@@ -16,7 +16,6 @@ Hypervisor
 
 .. image:: images/Hypervisor.png
 	:width: 600
-	:aligh: center
 	:alt: Hypervisor Type
 
 - Native(Bare-metal)
