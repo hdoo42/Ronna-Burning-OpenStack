@@ -15,6 +15,7 @@ connect(): 소켓을 시스템의 적절한 빈 자리(포트)에 대입한다. 
 accept(): [TCP 전용] 소켓에 대한 원격의 연결 시도를 받아들이고 지역-원격 끝점 쌍으로 연관되는 자식 소켓을 만들어 반환한다.
 send(), recv(), sendto(), recvfrom(): 데이터를 송/수신한다.
 close(): 소켓을 할당 해제한다. [TCP 전용] 그리고 연결을 종료한다.
+getsockopt(), setsockopt(): 소켓의 옵션을 가져오거나 변경한다.
 
 https://en.wikipedia.org/wiki/Berkeley_sockets
 
@@ -32,8 +33,10 @@ PUB-SUB 패턴
 ------------
 발행(Publish) - 구독(Subscribe) 패턴이다.
 
-분할-정복 구조
+PUSH-PULL 패턴
 ------------
+파이프라인 구조
+분할-정복 구조 (== 병렬 Fork-Join 구조)
 
 AMQP와의 차별점
 -------------
