@@ -7,12 +7,14 @@
 Contents
 --------
 
-.. toctree::
+.. autosummary::
+   :toctree: generated
 
    42seoul_region
    openstack
    cloud
    virtual_machine
    hypervisor
+   rpc
    http
    rabbitmq
