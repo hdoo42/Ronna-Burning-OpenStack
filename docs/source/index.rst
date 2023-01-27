@@ -7,8 +7,7 @@
 Contents
 --------
 
-.. autosummary::
-   :toctree: generated
+.. toctree::
 
    42seoul_region
    openstack
