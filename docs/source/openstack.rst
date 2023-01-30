@@ -143,6 +143,6 @@ Aodh: Rule-based alarm actions
 
 참고자료
 --------
-- `클라우드 컴퓨팅에서 인스턴스란 - https://aws.amazon.com/ko/what-is/cloud-instances/`_
-- `알아두면 쓸데있는 LDAP - https://www.samsungsds.com/kr/insights/ldap.html`_
-- `파일, 블록, 오브젝트 스토리지 - https://www.redhat.com/ko/topics/data-storage/file-block-object-storage`_
+- `클라우드 컴퓨팅에서 인스턴스란 <https://aws.amazon.com/ko/what-is/cloud-instances/>`_
+- `알아두면 쓸데있는 LDAP <https://www.samsungsds.com/kr/insights/ldap.html>`_
+- `파일, 블록, 오브젝트스토리지 <https://www.redhat.com/ko/topics/data-storage/file-block-object-storage>`_
