@@ -17,3 +17,4 @@ Contents
    rpc
    http
    rabbitmq
+   zeromq
