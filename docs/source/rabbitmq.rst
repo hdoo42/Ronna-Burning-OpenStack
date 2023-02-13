@@ -20,10 +20,9 @@ REST API를 통한 웹 기반 메시징 API를 지원한다.
 	전통적인 클라이언트-서버 모델과는 다르게 메시지를 보내는 생산자와 메시지를 받는 소비자로 분리되어 있으며, 메시지 브로커라는 제3의 구성 요소가 생산자와 소비자 사이의 통신을 처리한다.
 	 생산자와 소비자는 다음과 같이 분리되어 있다.
 
-	.. // FIXME: 혹시 출처가?
-	- 공간 분리: 생산자와 소비자는 서로의 네트워크를 알지 못하며 그 정보를 교환하지 않는다.
-	- 시간 분리: 생산자와 소비자는 동시에 실행되거나 네트워크로 연결되지 않는다.
-	- 동기화 분리: 소비자는 생산자의 메시지를 기다리지 않아도 된다.
+	- 공간 분리(Space decoupling): 생산자와 소비자는 서로의 네트워크를 알지 못하며 그 정보를 교환하지 않는다.
+	- 시간 분리(Time decoupling): 생산자와 소비자는 동시에 실행되거나 네트워크로 연결되지 않는다.
+	- 동기화 분리(Synchronization decoupling): 소비자는 생산자의 메시지를 기다리지 않아도 된다.
 	
 	메시지 브로커는 생산자로부터 수신되는 메시지를 필터링하여 소비자에게 직접 배포하며, 미들웨어 형식으로 존재한다.
 
@@ -35,7 +34,7 @@ REST API를 통한 웹 기반 메시징 API를 지원한다.
 	메세지는 일반적으로 네트워크 송수신 과정에서 전달이 이루어지는 정보를 의미한다.
 	일반적으로 메타데이터를 포함하는 Byte 배열의 형태를 가지며, header와 body로 구성된다.
 	메시지에는 평문(plain text), 상태 정보(status code) 또는 명령어(command)를 포함할 수 있다.
-	 메시지 큐의 경우, 메시지는 생산자가 소비자에게 전송하는 정보의 일부로 여겨지며, 
+	메시지 큐의 경우, 메시지는 생산자가 소비자에게 전송하는 정보의 일부로 여겨지며, 
 	메시지의 헤더에는 메시지 브로커(message broker)가 메시지 처리에 필요로 하는 정보를 추가로 포함할 수 있다.
 
 
@@ -54,7 +53,7 @@ AMQP
 AMQP(Advanced Message Queue Protocol)는 메시지 지향 미들웨어를 구현하기 위한 개방형 표준 응용 계층 프로토콜이다.
 
 AMQP 이전의 MQ 소프트웨어들은 플랫폼 종속적이였으며, 서로 다른 이들이 중간에 메시지 포맷을 변경하거나 시스템을 통일시켜야 하는 불편함이 존재했다.
- AMQP는 네트워크로 전송되는 명령어를 표준화하고 브로커와 클라이언트 사이의 전송방식을 통일하여 MQ 소프트웨어를 구현하기 위한 메시지 브로커의 기준을 세웠다.
+AMQP는 네트워크로 전송되는 명령어를 표준화하고 브로커와 클라이언트 사이의 전송방식을 통일하여 MQ 소프트웨어를 구현하기 위한 메시지 브로커의 기준을 세웠다.
 
 AMQP에서 정의한 기능은 메시지 지향, 큐잉, 라우팅(P2P 및 발행-구독), 신뢰성, 보안이 있다.
 
@@ -72,11 +71,34 @@ RabbitMQ(AMQP)의 구조
 
 - Queue
 	- 메모리나 디스크에 메시지를 저장하고, 그것을 소비자에게 전달하는 기능을 수행한다.
-	.. //FIXME: 리스닝? 폴링?
 	- 소비자는 메시지를 수신하기 위해 Queue를 실시간으로 리스닝한다.
 	.. //FIXME: 왜 큐를 소비자 수 만큼 둔 것이 효율이 높은가?
   	- AMQP는 이러한 Queue를 소비자의 수만큼 두어 효율을 높게 한다.
 	- 각 Queue는 관심있는 메시지 타입을 가진 상위 Exchange와 Binding된다.
+
+.. note::
+
+	리스닝(Listening)과 폴링(Polling)의 차이점은 무엇인가요?
+
+	메시지 리스닝은 메시지가 큐에 도착하자 마자 해당 메시지를 가져오는 방식을 의미하고, 
+	메시지 폴링은 일정한 간격을 두고 메세지 큐를 확인하여, 메세지가 존재하면 가져오는 방식을 의미한다.
+	따라서, 메시지 폴링 방식은 메시지가 오지 않는 빈 메시지 큐를 오래 확인하게 된다면, CPU 자원을 낭비하게 될 수 있다.
+
+	여담으로, 풀링(Pulling)은 큐에 메시지가 존재하던 말던 상관없이, 
+	큐에서 메시지를 가져오는 작업을 강제로 진행한다는 점에서 폴링과 차이점이 있다.
+
+.. note::
+
+	큐를 소비자 수 만큼 두는 것이 추천되는 이유는 무엇인가요?
+
+	만약 하나의 메시지 큐에 여러 소비자가 연결되어 있다면, 하나의 소비자가 큐를 읽을 동안 다른 소비자들은 블록 상태에 빠지게 된다.
+	또한 여러 개의 CPU 코어로 구성된 서버에 보다 효율적으로 
+
+
+.. note::
+
+	메시지 큐에서 로드 밸런싱을 어떻게 진행하나요?
+
 
 - Binding
 	- 각 Queue(또는 Exchange)를 상위 Exchange로 연결하는 것이다.
@@ -107,9 +129,10 @@ AMPQ와 같이 부하를 분산시키기 위한 Job Queue의 기능은 없지만
 - `velog - 메시지 큐와 프로토콜 <https://velog.io/@jun17114/%EB%A9%94%EC%8B%9C%EC%A7%80-%ED%81%90%EC%99%80-%ED%94%84%EB%A1%9C%ED%86%A0%EC%BD%9C>`_
 - `tistory - AMQP <https://kaizen8501.tistory.com/217>`_
 - `tistory - AMQP RabbitMQ <https://hyunalee.tistory.com/39#footnote_link_39_2>`_
-- `AWS - MQTT <https://aws.amazon.com/ko/what-is/mqtt/>`_
+- `AWS - MQTT <https:/ /aws.amazon.com/ko/what-is/mqtt/>`_
 - `Wikipedia - MQTT <https://ko.wikipedia.org/wiki/MQTT>`_
 - `joinc - MQTT <https://www.joinc.co.kr/w/man/12/MQTT/Tutorial>`_
 - `소켓과 포트 뜻과 차이 <https://blog.naver.com/ding-dong/221389847130>`_
 - `What's a Message Queue? <https://www.g2.com/articles/message-queue-mq>`_
 - `MQTT, AMPQ <https://hyunalee.tistory.com/39>`_
+- `pulling vs. polling <https://stackoverflow.com/questions/2761204/whats-the-difference-between-polling-and-pulling>`_
