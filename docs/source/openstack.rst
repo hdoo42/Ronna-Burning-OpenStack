@@ -28,7 +28,7 @@ OpenStack을 사용하는 기업
 
 - Rackspace
 	openstack을 설립
-- Redhat 
+- Redhat
 	OpenStack 서비스 제공을 비지니스 모델로 삼기 위해 많은 기여
 
 최소 구성 요소
@@ -83,7 +83,7 @@ Cinder: Block Storage
 Horizon: Dashboard
 	- OpenStack 환경을 운영 및 관리할 수 있는 웹 기반의 셀프 서비스 포털 인터페이스를 제공한다.
 	- Python 기반의 Django 프레임워크로 작성되었다. OpenStack API와 Amazon Web Server API를 지원한다.
-  
+
 .. note::
 
 	:strong:`Dashboard가 뭔가요?`
@@ -92,7 +92,7 @@ Horizon: Dashboard
 		- 사용자가 능동적으로 서비스를 제어할 수 있도록 하는 페이지다.
 		- 근본적으로 식당에서의 반찬 '셀프 서비스'랑 똑같다.
 		- 직원을 거치지 않고 사용자가 직접 원하는 서비스를 이용할 수 있다. 
-	
+
 그 외 구성요소
 -----------
 
