@@ -23,14 +23,14 @@ W3(World Wide Web) 상에서 정보를 주고받기 위한 통신 규약이다.
     ---
     classDiagram
         Request --|> Server
-        note for Request "a request line: \n<request method> <requested URL> <the protocol version>"
+        note for Request "a request line: \n request method, requested URL, the protocol version"
         Request : a REQUEST line
         Request : request header fields
         Request : message body - optional
 
         Response --|> Client
         Response : a STATUS line
-        note for Response "status line: \n<request method>,  <response status code>, <reason phrase>."
+        note for Response "status line: \nrequest method, response status code, reason phrase."
         Response : Response header fields
         Response : message body - optional
 

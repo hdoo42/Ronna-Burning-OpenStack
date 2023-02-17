@@ -26,18 +26,17 @@ RPC
 .. mermaid::
     
     sequenceDiagram
-    Note left of Client: Have server's ip and socket
-    Client-->>Server: Connection request
-    Server->>+Client: Accept
-    activate Server
-    loop 
-        Note over Client, Server: Full Duplex
-        
-        Client-->>Server:  
-        Server-->>Client: 
-    end
-    Note over Client, Server: Fin
-    deactivate Server
+        Note left of Client: Have server's ip and socket
+        Client-->>Server: Connection request
+        Server->>+Client: Accept
+        activate Server
+        loop
+            Note over Client, Server: Full Duplex
+            Client-->>Server:
+            Server-->>Client:
+        end
+        Note over Client, Server: Fin
+        deactivate Server
 
 .. note::
 
