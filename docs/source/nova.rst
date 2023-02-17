@@ -4,7 +4,7 @@ Nova
     .. _summary:
 
 About this project
-------------
+-------------------
 
 To implement services and associated libraries to provide massively scalable, on demand, self service access to compute resources, including bare metal, virtual machines, and containers.
 
