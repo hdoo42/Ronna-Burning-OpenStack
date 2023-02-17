@@ -31,7 +31,7 @@ REST API를 통한 웹 기반 메시징 API를 지원한다.
 
 	메시지란 무엇인가요?
 
-	메세지는 일반적으로 네트워크 송수신 과정에서 전달이 이루어지는 정보를 의미한다.
+	메시지는 일반적으로 네트워크 송수신 과정에서 전달이 이루어지는 정보를 의미한다.
 	일반적으로 메타데이터를 포함하는 Byte 배열의 형태를 가지며, header와 body로 구성된다.
 	메시지에는 평문(plain text), 상태 정보(status code) 또는 명령어(command)를 포함할 수 있다.
 	메시지 큐의 경우, 메시지는 생산자가 소비자에게 전송하는 정보의 일부로 여겨지며, 
@@ -72,22 +72,30 @@ RabbitMQ(AMQP)의 구조
 - Queue
 	- 메모리나 디스크에 메시지를 저장하고, 그것을 소비자에게 전달하는 기능을 수행한다.
 	- 소비자는 메시지를 수신하기 위해 Queue를 실시간으로 리스닝한다.
-
-.. //FIXME: 왜 큐를 소비자 수 만큼 둔 것이 효율이 높은가?
-
   	- AMQP는 이러한 Queue를 소비자의 수만큼 두어 효율을 높게 한다.
-	- 각 Queue는 관심있는 메시지 타입을 가진 상위 Exchange와 Binding된다.
+	- 각 Queue는 관심있는 메시지 타입을 가진 상위 Exchange와 결속(binding)된다.
+
+.. note::
+
+	왜 큐를 소비자 수 만큼 두는 것이 효율이 높은가요? (참조: MPSC, Multi-Producer Single-Consumer Wait-Free Queue)
+	메시지 관리를 위한 자료구조의 접근에서 lock을 사용하게 되고, 이로 인해 메시지를 가져올 때 한 단위 시간에 한 소비자만 접근할 수 있게 되어 필연적으로 대기열이 생기게 됩니다.
+	부하를 분산하기 위해서 토픽 단위로 분류한다고 하더라도 관심이 있는 소비자의 조회수를 확인할 필요가 있으므로 결국 성능이 저하됩니다.
+	하지만 소비자
+
+	.. // TODO 큐의 구조 확인하는 방법이 무엇일까...
+
 
 .. note::
 
 	리스닝(Listening)과 폴링(Polling)의 차이점은 무엇인가요?
 
 	메시지 리스닝은 메시지가 큐에 도착하자 마자 해당 메시지를 가져오는 방식을 의미하고, 
-	메시지 폴링은 일정한 간격을 두고 메세지 큐를 확인하여, 메세지가 존재하면 가져오는 방식을 의미한다.
+	메시지 폴링은 일정한 간격을 두고 메시지 큐를 확인하여, 메시지가 존재하면 가져오는 방식을 의미한다.
 	따라서, 메시지 폴링 방식은 메시지가 오지 않는 빈 메시지 큐를 오래 확인하게 된다면, CPU 자원을 낭비하게 될 수 있다.
 
 	여담으로, 풀링(Pulling)은 큐에 메시지가 존재하던 말던 상관없이, 
 	큐에서 메시지를 가져오는 작업을 강제로 진행한다는 점에서 폴링과 차이점이 있다.
+
 
 .. note::
 
@@ -138,3 +146,4 @@ AMPQ와 같이 부하를 분산시키기 위한 Job Queue의 기능은 없지만
 - `What's a Message Queue? <https://www.g2.com/articles/message-queue-mq>`_
 - `MQTT, AMPQ <https://hyunalee.tistory.com/39>`_
 - `pulling vs. polling <https://stackoverflow.com/questions/2761204/whats-the-difference-between-polling-and-pulling>`_
+- `error handling in message queue - stack overflow <https://stackoverflow.com/questions/53011333/architecture-using-a-separate-queue-for-error-handling>`_

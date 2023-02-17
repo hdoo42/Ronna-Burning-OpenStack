@@ -104,8 +104,7 @@ Horizon: Dashboard
 Swift: Object Storage
 	- 클라우드 스토리지 소프트웨어를 제공, 간단한 API로 많은 데이터를 저장하고 검색할 수 있다.
 
-	..
-		//FIXME 아래는 모름
+	.. //FIXME 아래는 모름
 
 Mistral: Workflow
 	- 워크플로우를 관리하는 서비스. YAML 기반의 워크플로우 언어를 사용해서 작성하고 워크플로우 정의를 RESTAPI를 통해 업로드한다. 사용자는 동일한 API로 워크플로우를 시작하거나 자동화한다.
