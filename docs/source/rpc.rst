@@ -23,21 +23,21 @@ RPC
     가령 TCP 통신에 있어서, 클라이언트가 서버의 IP 주소와 포트 번호를 알고 있다면, 해당 서버와 연결할 본인의 소켓을 열고, 서버로 연결 요청을 보낸다.
     서버가 연결을 수락하는 경우, 서버가 연 해당 포트의 소켓과 클라이언트의 소켓이 서로 연결되며, 상호 간 통신이 가능해진다.
 
-    .. mermaid::
+.. mermaid::
+    
+    sequenceDiagram
+    Note left of Client: Have server's ip and socket
+    Client-->>Server: Connection request
+    Server->>+Client: Accept
+    activate Server
+    loop 
+        Note over Client, Server: Full Duplex
         
-        sequenceDiagram
-        Note left of Client: Have server's ip and socket
-        Client-->>Server: Connection request
-        Server->>+Client: Accept
-        activate Server
-        loop 
-            Note over Client, Server: Full Duplex
-            
-            Client-->>Server:  
-            Server-->>Client: 
-        end
-        Note over Client, Server: Fin
-        deactivate Server
+        Client-->>Server:  
+        Server-->>Client: 
+    end
+    Note over Client, Server: Fin
+    deactivate Server
 
 .. note::
 
