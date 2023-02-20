@@ -29,6 +29,7 @@ W3(World Wide Web) 상에서 정보를 주고받기 위한 통신 규약이다.
         Request : message body - optional
 
         Response --|> Client
+        note for Response "status line: \nrequest method, response status code, reason phrase."
         Response : a STATUS line
         note for Response "status line: \nrequest method, response status code, reason phrase."
         Response : Response header fields
@@ -52,7 +53,6 @@ HTTP의 전송은 텍스트를 기반으로 한다. 사실상 텍스트 파일�
 
 따라서 HTTP를 통하는 API를 만들 수 있다.
 URI나 헤더, 컨텐츠 부분에 매개변수를 싣고 미리 정의한 특정한 URI 이름으로 요청을 하면, 이에 대한 응답을 하도록 하는 프로그램을 구현할 수 있다.
-
 
 응답 코드
 -------------
