@@ -18,3 +18,4 @@ Contents
    http
    rabbitmq
    zeromq
+   berkeley_sockets
